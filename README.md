@@ -1,0 +1,1 @@
+# Aquality.Selenium.Template
