@@ -1,23 +1,12 @@
 ﻿Feature: Demo
 
 @demo
-Scenario Outline: Empty email validation is working on Contact Us page
-    Given Main page is opened
-    When I open Contact us page
-    Then Contact us page is opened
-    When I save Contact us page dump
-        And I fill contact form using following data:
-        | Name    | Value                    |
-        | Name    | <Name>                   |
-        | Company | Aquality Automation      |
-        | Phone   | +44 208 816 7320         |
-        | Comment | I'd like to contact you! |
-        And I accept Privacy and Cookies Policy
-        And I click Send button
-    Then Notification about empty fields is present
-        And Contact us page dump is different
-
-    Examples: 
-    | Name         |
-    | John Doe     |
-    | Peter Parker |
+Scenario Outline: I check filters Cian
+    When I log in in Cian with email '...' and password '...'
+	When I choose rent
+	When I fill in filters: house type - 'Комната'
+	When I set price from '10000' to '30000' and set true owner check box
+	When I fill more filters: owner check box and house size: '3'
+	When I choose first offer
+	Then Expected owner indicator, house type 'Комната', price range '10000'-'30000' and house size '3'
+	When I click to show phone

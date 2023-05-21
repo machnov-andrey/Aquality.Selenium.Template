@@ -74,22 +74,14 @@ namespace Aquality.Selenium.Template.SpecFlow.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Empty email validation is working on Contact Us page")]
+        [NUnit.Framework.DescriptionAttribute("I check filters Cian")]
         [NUnit.Framework.CategoryAttribute("demo")]
-        [NUnit.Framework.TestCaseAttribute("John Doe", null)]
-        [NUnit.Framework.TestCaseAttribute("Peter Parker", null)]
-        public void EmptyEmailValidationIsWorkingOnContactUsPage(string name, string[] exampleTags)
+        public void ICheckFiltersCian()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "demo"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Name", name);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Empty email validation is working on Contact Us page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I check filters Cian", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -101,46 +93,29 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
-    testRunner.Given("Main page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.When("I log in in Cian with email \'automation@tquality.ru\' and password \'qweasdzxc\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 6
-    testRunner.When("I open Contact us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I choose rent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
-    testRunner.Then("Contact us page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I fill in filters: house type - \'Комната\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
-    testRunner.When("I save Contact us page dump", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I set price from \'10000\' to \'30000\' and set true owner check box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name",
-                            "Value"});
-                table1.AddRow(new string[] {
-                            "Name",
-                            string.Format("{0}", name)});
-                table1.AddRow(new string[] {
-                            "Company",
-                            "Aquality Automation"});
-                table1.AddRow(new string[] {
-                            "Phone",
-                            "+44 208 816 7320"});
-                table1.AddRow(new string[] {
-                            "Comment",
-                            "I\'d like to contact you!"});
 #line 9
-        testRunner.And("I fill contact form using following data:", ((string)(null)), table1, "And ");
+ testRunner.When("I fill more filters: owner check box and house size: \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
-        testRunner.And("I accept Privacy and Cookies Policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.When("I choose first offer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 16
-        testRunner.And("I click Send button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.Then("Expected owner indicator, house type \'Комната\', price range \'10000\'-\'30000\' and h" +
+                        "ouse size \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 17
-    testRunner.Then("Notification about empty fields is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 18
-        testRunner.And("Contact us page dump is different", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.When("I click to show phone", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();
